@@ -1,15 +1,15 @@
-;;= My init.el =======================================================
+;;= My init.el =================================================================
 ;; Thanks to https://sr.ht/~ashton314/emacs-bedrock/
 ;; Author: Bhargav Kulkarni
 
-;;- Custom Options ---------------------------------------------------
+;;- Custom Options -------------------------------------------------------------
 
 ;; All this does is ensure all the custom emacs set options are in
 ;; this "custom.el" file
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)
 
-;;- Package Init -----------------------------------------------------
+;;- Package Init ---------------------------------------------------------------
 
 ;; Adds melpa and nongnu as package sources
 (require 'package)
@@ -24,7 +24,7 @@
 (unless package-archive-contents
   (package-refresh-contents))
 
-;;- Basic Look and Feel ----------------------------------------------
+;;- Basic Look and Feel --------------------------------------------------------
 
 ;; Turn off the welcome screen
 (setopt inhibit-splash-screen t)
@@ -47,7 +47,7 @@
 ;; Make emacs prefer vertical window splits
 (setq split-width-threshold 1)
 
-;;- Clean Backup Files -----------------------------------------------
+;;- Clean Backup Files ---------------------------------------------------------
 
 ;; Don't litter file system with *~ backup files; put them all inside
 ;; ~/.emacs.d/emacs-backup
@@ -67,7 +67,7 @@ If the new path's directories does not exist, create them."
     backupFilePath))
 (setopt make-backup-file-name-function 'custom-backup-file-name)
 
-;;- Key Discovery ----------------------------------------------------
+;;- Key Discovery --------------------------------------------------------------
 
 ;; Quick Help
 ;; (add-hook 'after-init-hook 'help-quick)
@@ -78,7 +78,7 @@ If the new path's directories does not exist, create them."
   :ensure t
   :config (which-key-mode))
 
-;;- Better Minibuffer ------------------------------------------------
+;;- Better Minibuffer ----------------------------------------------------------
 
 ;; TAB cycles candidates
 (setopt completion-cycle-threshold 1)
@@ -104,7 +104,7 @@ If the new path's directories does not exist, create them."
 ;; TAB in minibuffer acts like it does in shell
 (keymap-set minibuffer-mode-map "TAB" 'minibuffer-complete)
 
-;;- Interface enhancements -------------------------------------------
+;;- Interface enhancements -----------------------------------------------------
 
 ;; Add line and column number information in modeline
 (setopt line-number-mode t)
@@ -151,7 +151,7 @@ If the new path's directories does not exist, create them."
 (setopt display-time-interval 1)
 (display-time-mode)
 
-;;- Theme ------------------------------------------------------------
+;;- Theme ----------------------------------------------------------------------
 
 (use-package doom-themes
   :ensure t
@@ -188,7 +188,7 @@ If the new path's directories does not exist, create them."
 			'light))
   (switch-to-theme current-theme))
 
-;;- Modeline ---------------------------------------------------------
+;;- Modeline -------------------------------------------------------------------
 
 (use-package fontset
   :config
@@ -211,7 +211,7 @@ If the new path's directories does not exist, create them."
   :config
   (solaire-global-mode +1))
 
-;;- Olivetti ---------------------------------------------------------
+;;- Olivetti -------------------------------------------------------------------
 
 (use-package olivetti
   :ensure t)
@@ -219,7 +219,7 @@ If the new path's directories does not exist, create them."
 (setq-default olivetti-body-width 80)
 
 
-;;- Dashboard --------------------------------------------------------
+;;- Dashboard ------------------------------------------------------------------
 
 (use-package dashboard
   :ensure t
@@ -231,7 +231,7 @@ If the new path's directories does not exist, create them."
   :config
   (dashboard-setup-startup-hook))
 
-;;- Load other config ------------------------------------------------
+;;- Load other config ----------------------------------------------------------
 
 ;; UI/UX enhancements mostly focused on minibuffer and autocompletion
 ;; interfaces

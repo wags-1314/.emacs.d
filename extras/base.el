@@ -1,8 +1,8 @@
-;;= Base Enhancements ================================================
+;;= Base Enhancements ==========================================================
 ;; Thanks to https://sr.ht/~ashton314/emacs-bedrock/
 ;; Author: Bhargav Kulkarni
 
-;;- Movement with `avy' ----------------------------------------------
+;;- Movement with `avy' --------------------------------------------------------
 
 (use-package avy
   :ensure t
@@ -10,7 +10,7 @@
   :bind (("C-c j" . avy-got-line)
 	 ("s-j"   . avy-goto-char-timer)))
 
-;;- Enhanced commands with `consult' ---------------------------------
+;;- Enhanced commands with `consult' -------------------------------------------
 
 ;; TODO look up consult
 (use-package consult
@@ -36,7 +36,7 @@
   ;; Narrowing lets you restrict results to certain groups of candidates
   (setq consult-narrow-key "<"))
 
-;;- Better right-click with `embark' ---------------------------------
+;;- Better right-click with `embark' -------------------------------------------
 
 (use-package embark
   :ensure t
@@ -61,7 +61,7 @@
 (use-package embark-consult
   :ensure t)
 
-;;- Better Minibuffer ------------------------------------------------
+;;- Better Minibuffer ----------------------------------------------------------
 
 ;; Vertico: better vertical completion for minibuffer commands
 (use-package vertico
@@ -81,7 +81,7 @@
   :config
   (marginalia-mode))
 
-;;- Better Completions -----------------------------------------------
+;;- Better Completions ---------------------------------------------------------
 
 ;; Popup completion-at-point
 (use-package corfu
@@ -141,7 +141,7 @@
   :config
   (setq completion-styles '(orderless)))
 
-;;- Better editing ---------------------------------------------------
+;;- Better editing -------------------------------------------------------------
 
 ;; Modify search results en masse
 (use-package wgrep

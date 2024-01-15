@@ -1,4 +1,4 @@
-;;= Programming Stuff ================================================
+;;= Programming Stuff ==========================================================
 ;; Thanks to https://sr.ht/~ashton314/emacs-bedrock/
 ;; Author: Bhargav Kulkarni
 
@@ -20,13 +20,13 @@
   ;; Auto parenthesis matching
   ((prog-mode . electric-pair-mode)))
 
-;;- Version Control --------------------------------------------------
+;;- Version Control ------------------------------------------------------------
 
 (use-package magit
   :ensure t
   :bind (("C-x g" . magit-status)))
 
-;;- Project Management -----------------------------------------------
+;;- Project Management ---------------------------------------------------------
 
 (use-package projectile
   :ensure t
@@ -38,7 +38,7 @@
 
 (add-hook 'olivetti-mode-on-hook (lambda () (olivetti-set-width 74)))
 
-;;- Programming Modes ------------------------------------------------
+;;- Programming Modes ----------------------------------------------------------
 
 (use-package markdown-mode
   :ensure t
@@ -55,7 +55,7 @@
 
 (setopt racket-program "/Applications/Racket v8.11.1/bin/racket")
 
-;;- LSP --------------------------------------------------------------
+;;- LSP ------------------------------------------------------------------------
 
 (use-package eglot
   ;; no :ensure t here because it's built-in
