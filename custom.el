@@ -7,6 +7,8 @@
  '(column-number-mode t)
  '(cua-mode t)
  '(display-time-mode t)
+ '(package-selected-packages
+   '(olivetti yaml-mode which-key wgrep vertico solaire-mode racket-mode projectile orderless markdown-mode marginalia magit kind-icon json-mode embark-consult doom-themes dashboard corfu-terminal cape avy))
  '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

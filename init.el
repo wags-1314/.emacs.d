@@ -142,6 +142,10 @@ If the new path's directories does not exist, create them."
 (let ((hl-line-hooks '(text-mode-hook prog-mode-hook)))
   (mapc (lambda (hook) (add-hook hook 'hl-line-mode)) hl-line-hooks))
 
+;; Line at column 80
+(setopt display-fill-column-indicator-column 80)
+(add-hook 'prog-mode-hook #'display-fill-column-indicator-mode)
+
 ;; Display time in the modeline
 (setopt display-time-format "%a %F %T")
 (setopt display-time-interval 1)
@@ -206,6 +210,14 @@ If the new path's directories does not exist, create them."
   :ensure t
   :config
   (solaire-global-mode +1))
+
+;;- Olivetti ---------------------------------------------------------
+
+(use-package olivetti
+  :ensure t)
+
+(setq-default olivetti-body-width 80)
+
 
 ;;- Dashboard --------------------------------------------------------
 
