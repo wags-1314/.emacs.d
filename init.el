@@ -216,7 +216,16 @@ If the new path's directories does not exist, create them."
 (use-package olivetti
   :ensure t)
 
-(setq-default olivetti-body-width 80)
+(add-hook 'olivetti-mode-on-hook (lambda () (olivetti-set-width 80)))
+
+(load-file (expand-file-name "dl-packages/auto-olivetti.el"
+			     user-emacs-directory))
+
+(use-package auto-olivetti
+  :init
+  (setq auto-olivetti-enabled-modes '(text-mode prog-mode))
+  :config
+  (auto-olivetti-mode))
 
 
 ;;- Dashboard ------------------------------------------------------------------
