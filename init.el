@@ -166,27 +166,19 @@ If the new path's directories does not exist, create them."
   ;; Enable flashing mode-line on errors
   (doom-themes-visual-bell-config))
 
-(defvar light-and-dark-themes
-  '((light . #'doom-solarized-light)
-    (dark  . #'doom-solarized-dark)))
-
-(defvar current-theme 'light)
-
-(defun switch-to-theme (theme)
-  (eval (cdr (assoc light-and-dark-themes theme))))
-
-(defun light-theme ()
-  (load-theme (switch-to-theme 'light) t))
-
-(defun dark-theme ()
-  (load-theme (switch-to-theme 'dark) t))
+(defvar light-theme 'doom-solarized-light)
+(defvar dark-theme 'doom-solarized-dark)
+(defvar current-theme light-theme)
 
 (defun toggle-theme ()
+  "Toggle between light and dark themes."
   (interactive)
-  (setq current-theme (if (eq current-theme 'light)
-			  'dark
-			'light))
-  (switch-to-theme current-theme))
+  (setq current-theme (if (eq current-theme light-theme)
+			  dark-theme
+			light-theme))
+  (load-theme current-theme t))
+
+(global-set-key (kbd "C-c t") 'toggle-theme)
 
 ;;- Modeline -------------------------------------------------------------------
 
